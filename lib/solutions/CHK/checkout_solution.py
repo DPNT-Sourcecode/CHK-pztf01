@@ -28,6 +28,13 @@ class CheckoutSolution:
                     free_product = price_table[i]["multi_offer"]["free_product"]
                     free_quantity = price_table[i]["multi_offer"]["free_quantity"]
 
+                    quotient = quantity//units
+
+                    if free_product in items_purchased:
+                        items_purchased[free_product] = items_purchased[free_product] - quotient
+                        if items_purchased[free_product] < 0:
+                            items_purchased[free_product] = 0
+
         for i in items_purchased:
             # i = A
             quantity = items_purchased[i] # 35
@@ -62,6 +69,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
