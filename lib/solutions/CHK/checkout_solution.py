@@ -9,4 +9,3 @@ class CheckoutSolution:
                 "C": {"price" : 20},
                 "D": {"price" : 15}}
         
-
