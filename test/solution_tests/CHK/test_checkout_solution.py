@@ -1,6 +1,6 @@
 from lib.solutions.CHK.checkout_solution import CheckoutSolution
 
-class TestCheckout():
+class TestChk():
     def checkout_test1(self):
         assert CheckoutSolution().checkout("AAABBCD") == 210
 
