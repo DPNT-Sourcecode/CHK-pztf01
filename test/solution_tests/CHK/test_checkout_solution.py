@@ -27,3 +27,12 @@ class TestChk():
 
     def test_checkout_9(self):
         assert CheckoutSolution().checkout("EEEEEB") == 200
+
+    def test_checkout_10(self):
+        assert CheckoutSolution().checkout("FFFFFFF") == 50
+
+    def test_checkout_11(self):
+        assert CheckoutSolution().checkout("AAFF") == 120
+
+    def test_checkout_12(self):
+        assert CheckoutSolution().checkout("AAAAABBBEEFFF") == 345
