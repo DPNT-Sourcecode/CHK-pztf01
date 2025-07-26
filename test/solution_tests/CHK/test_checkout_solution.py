@@ -27,4 +27,3 @@ class TestChk():
 
     def test_checkout_9(self):
         assert CheckoutSolution().checkout("EEEEEB") == 200
-

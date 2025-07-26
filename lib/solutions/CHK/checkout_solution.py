@@ -75,10 +75,3 @@ class CheckoutSolution:
 
 
 
-
-
-
-
-
-
-
