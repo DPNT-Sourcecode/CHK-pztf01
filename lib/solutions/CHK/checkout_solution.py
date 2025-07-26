@@ -61,7 +61,9 @@ class CheckoutSolution:
                         if remainder > 0:
                             quantity = remainder
                             if j < len(price_table[i]["special_offers"]) - 1:
-                                j = j + 1 
+                                j = j + 1
+                            else:
+                                j = -1
                         else:
                             j = -1
 
@@ -72,6 +74,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
