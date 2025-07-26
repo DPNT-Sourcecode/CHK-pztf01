@@ -9,3 +9,13 @@ class CheckoutSolution:
                 "C": {"price" : 20},
                 "D": {"price" : 15}}
         
+        items_purchased = {}
+        
+        for i in skus:
+            if i in items_purchased:
+                items_purchased[i] = items_purchased[i] + 1
+            else:
+                items_purchased[i] = 1
+
+        
+
