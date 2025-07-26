@@ -7,7 +7,7 @@ class CheckoutSolution:
         price_table = {"A": {"price" : 50, "special_offers" : [{"units" : 3, "price" : 130}, {"units" : 5, "price" : 200}]},
                 "B": {"price" : 30, "special_offers" : {"units" : 2, "price" : 45}},
                 "C": {"price" : 20},
-                "D": {"price" : 15}}
+                "D": {"price" : 15, "multi_offer" : {"units" : 2, "free_product" : "B", "free_quantity" : 1}}}
         
         items_purchased = {}
         
@@ -41,6 +41,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
