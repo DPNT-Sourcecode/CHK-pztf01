@@ -25,23 +25,34 @@ class CheckoutSolution:
             offer_unit = 1
             offer_price = 0
             price = 0
+            cost = 0
             if i in price_table:
                 price = price_table[i]["price"] # 50
                 if "special_offers" in price_table[i]:
-                    for j in price_table[i]["special_offers"]:
-                        offer_unit = j["units"] # 3
-                        offer_price = j["price"] # 130
+                    j = 0
+                    while j >= 0:
+                        offer_unit = price_table[i]["special_offers"]["units"] # 5
+                        offer_price = price_table[i]["special_offers"]["price"] # 200
                 
-                    quotient = quantity//offer_unit
-                    remainder = quantity % offer_unit
+                        quotient = quantity//offer_unit
+                        remainder = quantity % offer_unit
 
-                    item_total_cost = (quotient * offer_price) + (remainder * price)
+                        cost = cost + (quotient * offer_price)
 
+                        if remainder > 0:
+                            j = j + 1
+                            quantity = remainder
+                        else:
+                            j = -1
+
+                    item_total_cost = cost + (remainder * price)
+                
                 else:
                     item_total_cost = price * quantity
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
