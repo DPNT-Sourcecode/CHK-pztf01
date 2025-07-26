@@ -2,20 +2,18 @@
 class SumSolution:
     
     def compute(self, x, y):
-        """Return the result of sum a and b
+        """Return the result of sum x and y
             
             Args:
-                a (int): Positive Integer between 0 and 100
-                b (int): Positive Integer between 0 and 100.
+                x (int): Positive Integer between 0 and 100
+                y (int): Positive Integer between 0 and 100.
             
             Returns:
-                int: Sum of a and b.
+                int: Sum of x and y.
                 
         """
         
-        if (isinstance(a,int) and a > 0 and a < 100) and (isinstance(b,int) and b > 0 and b < 100):
-            return a + b
+        if (isinstance(x,int) and x > 0 and x < 100) and (isinstance(y,int) and y > 0 and y < 100):
+            return x + y
         else:
             raise ValueError("All imputs must be and integer between 0 and 100")
-
-
