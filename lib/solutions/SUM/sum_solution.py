@@ -13,7 +13,8 @@ class SumSolution:
                 
         """
         
-        if (isinstance(x,int) and x > 0 and x < 100) and (isinstance(y,int) and y > 0 and y < 100):
+        if (isinstance(x,int) and x >= 0 and x <= 100) and (isinstance(y,int) and y >= 0 and y <= 100):
             return x + y
         else:
             raise ValueError("All imputs must be and integer between 0 and 100")
+
