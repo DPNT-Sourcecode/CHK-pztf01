@@ -12,6 +12,8 @@ class CheckoutSolution:
         items_purchased = {}
         
         for i in skus:
+            if i not in price_table:
+                return -1
             if i in items_purchased:
                 items_purchased[i] = items_purchased[i] + 1
             else:
@@ -37,6 +39,9 @@ class CheckoutSolution:
                 item_total_cost = (quotient * offer_price) + (remainder * price)
                 
                 basket_total = basket_total + item_total_cost
+                
+        return basket_total
+
 
 
 
