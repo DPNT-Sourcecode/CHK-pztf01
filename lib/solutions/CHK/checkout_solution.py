@@ -21,6 +21,14 @@ class CheckoutSolution:
                 items_purchased[i] = 1
 
         for i in items_purchased:
+            quantity = items_purchased[i]
+            if i in price_table:
+                if "multi_offer" in price_table[i]:
+                    units = price_table[i]["multi_offer"]["units"]
+                    free_product = price_table[i]["multi_offer"]["free_product"]
+                    free_quantity = price_table[i]["multi_offer"]["free_quantity"]
+
+        for i in items_purchased:
             # i = A
             quantity = items_purchased[i] # 35
             offer_unit = 1
@@ -54,6 +62,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
