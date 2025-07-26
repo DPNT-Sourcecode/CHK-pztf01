@@ -1,17 +1,17 @@
 from lib.solutions.CHK.checkout_solution import CheckoutSolution
 
 class TestChk():
-    def checkout_test1(self):
+    def test_checkout_1(self):
         assert CheckoutSolution().checkout("AAABBCD") == 210
 
-    def checkout_test2(self):
+    def test_checkout_2(self):
         assert CheckoutSolution().checkout("AACD") == 135
 
-    def checkout_test3(self):
+    def test_checkout_3(self):
         assert CheckoutSolution().checkout("G") == -1
 
-    def checkout_test4(self):
+    def test_checkout_4(self):
         assert CheckoutSolution().checkout("DCBA") == 115
 
-    def checkout_test(self):
+    def test_checkout_5(self):
         assert CheckoutSolution().checkout("") == -1
