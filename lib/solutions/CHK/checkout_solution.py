@@ -8,7 +8,8 @@ class CheckoutSolution:
                 "B": {"price" : 30, "special_offers" : [{"units" : 2, "price" : 45}]},
                 "C": {"price" : 20},
                 "D": {"price" : 15},
-                "E": {"price" : 40,  "multi_offer" : {"units" : 2, "free_product" : "B", "free_quantity" : 1}}}
+                "E": {"price" : 40,  "multi_offer" : {"units" : 2, "free_product" : "B", "free_quantity" : 1}},
+                "F": {{"price" : 10,  "multi_offer" : {"units" : 2, "free_product" : "F", "free_quantity" : 1}}}}
         
         items_purchased = {}
         
@@ -74,6 +75,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
