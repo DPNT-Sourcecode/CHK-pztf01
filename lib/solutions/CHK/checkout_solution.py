@@ -32,6 +32,7 @@ class CheckoutSolution:
                 if "special_offers" in price_table[i]:
                     j = 0
                     while j >= 0:
+                        print(price_table[i]["special_offers"][j]["price"])
                         offer_unit = price_table[i]["special_offers"][j]["units"] # 5
                         offer_price = price_table[i]["special_offers"][j]["price"] # 200
                 
@@ -53,6 +54,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
