@@ -17,5 +17,9 @@ class CheckoutSolution:
             else:
                 items_purchased[i] = 1
 
+        for i in items_purchased:
+            quantity = items_purchased[i]
+
         
+
 
