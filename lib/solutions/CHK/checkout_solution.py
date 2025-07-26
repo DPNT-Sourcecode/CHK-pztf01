@@ -4,7 +4,7 @@ class CheckoutSolution:
     # skus = unicode string
     def checkout(self, skus):
         basket_total = 0
-        price_table = {"A": {"price" : 50, "special_offers" : {"units" : 3, "price" : 130}},
+        price_table = {"A": {"price" : 50, "special_offers" : [{"units" : 3, "price" : 130}, {"units" : 5, "price" : 200}]},
                 "B": {"price" : 30, "special_offers" : {"units" : 2, "price" : 45}},
                 "C": {"price" : 20},
                 "D": {"price" : 15}}
@@ -41,6 +41,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
