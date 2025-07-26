@@ -2,7 +2,7 @@ from lib.solutions.CHK.checkout_solution import CheckoutSolution
 
 class TestChk():
     def test_checkout_1(self):
-        assert CheckoutSolution().checkout("AAABBCD") == 210
+        assert CheckoutSolution().checkout("AAAAAAAAABBCD") == 480
 
     def test_checkout_2(self):
         assert CheckoutSolution().checkout("AACD") == 135
@@ -15,3 +15,12 @@ class TestChk():
 
     def test_checkout_5(self):
         assert CheckoutSolution().checkout("") == 0
+
+    def test_checkout_6(self):
+        assert CheckoutSolution().checkout("ABCDE") == 155
+
+    def test_checkout_7(self):
+        assert CheckoutSolution().checkout("AAAAAAED") == 305
+
+    def test_checkout_8(self):
+        assert CheckoutSolution().checkout("AAAABC") == 230
