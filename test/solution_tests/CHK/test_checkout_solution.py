@@ -14,4 +14,4 @@ class TestChk():
         assert CheckoutSolution().checkout("DCBA") == 115
 
     def test_checkout_5(self):
-        assert CheckoutSolution().checkout("") == -1
+        assert CheckoutSolution().checkout("") == 0

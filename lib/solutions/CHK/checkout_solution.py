@@ -11,8 +11,6 @@ class CheckoutSolution:
         
         items_purchased = {}
         
-        if len(skus) == 0:
-            return -1
         for i in skus:
             if i not in price_table:
                 return -1
