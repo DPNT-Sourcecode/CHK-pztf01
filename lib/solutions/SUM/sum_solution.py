@@ -17,4 +17,3 @@ class SumSolution:
             return x + y
         else:
             raise ValueError("All imputs must be and integer between 0 and 100")
-
