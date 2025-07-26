@@ -31,6 +31,9 @@ class CheckoutSolution:
 
                     quotient = quantity//units
 
+                    if free_product == i:
+                        quotient = ((units//(units + free_quantity)) * quantity)
+
                     if free_product in items_purchased:
                         items_purchased[free_product] = items_purchased[free_product] - quotient
                         if items_purchased[free_product] < 0:
@@ -75,7 +78,6 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
-
 
 
 
