@@ -24,3 +24,7 @@ class TestChk():
 
     def test_checkout_8(self):
         assert CheckoutSolution().checkout("AAAABC") == 230
+
+    def test_checkout_9(self):
+        assert CheckoutSolution().checkout("EEEEEB") == 200
+
