@@ -19,8 +19,12 @@ class CheckoutSolution:
 
         for i in items_purchased:
             quantity = items_purchased[i]
-            
+            offer_unit = 0
+            offer_price = 0
+            price = 0
             if i in price_table:
                 if "special_offers" in price_table[i]:
                     offer_unit = price_table[i]["special_offers"]["unit"]
                     offer_price = price_table[i]["special_offers"]["price"]
+            
+                price = price_table[i]["price"]
