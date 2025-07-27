@@ -64,11 +64,14 @@ class CheckoutSolution:
                 if j in items_purchased and quantity_in_basket>0:
                     item_count = items_purchased[j]["item_count"]
                     if quantity_in_basket - item_count >= remainder:
-                        items_purchased[j]["item_count"] = max(items_purchased[j]["item_count"] - quantity_in_basket, 0 )
-                        if (items_purchased[j]["item_count"] == 0):
-                          del items_purchased[j]
+                        items_purchased[j]["item_count"] = 0
                         quantity_in_basket = quantity_in_basket - item_count
-
+                    else:
+                      if item_count >= remainder:
+                        items_purchased[j]["item_count"] = item_count - remainder
+                        quantity_in_basket = quantity_in_basket - remainder
+                    if (items_purchased[j]["item_count"] == 0):
+                      del items_purchased[j]
 
         for i in items_purchased:
             quantity = items_purchased[i]["item_count"]
