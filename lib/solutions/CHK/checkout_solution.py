@@ -40,7 +40,8 @@ class CheckoutSolution:
         group_offers = {"G1" : {"group" : ["Z", "Y", "S", "T", "X"], "group_quantity" : 3, "group_price" : 45}}
         
         items_purchased = {}
-        
+        items_group={}
+
         for i in skus:
             if i not in price_table:
                 return -1
@@ -48,7 +49,11 @@ class CheckoutSolution:
                 items_purchased[i]["item_count"] = items_purchased[i]["item_count"] + 1
                 for j in group_offers:
                     if i in group_offers[j]["group"]:
-                       items_purchased[i]["item_group"]="G1" 
+                        items_purchased[i]["item_group"]="G1"
+                        if i in items_group:
+                            items_group[i] = items_group[i] + 1
+                        else:
+                            items_group[i] = 1 
             else:
                 items_purchased[i] = {"item_count": 1}
 
@@ -110,6 +115,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
