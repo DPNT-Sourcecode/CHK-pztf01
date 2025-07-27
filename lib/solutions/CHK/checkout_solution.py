@@ -14,7 +14,14 @@ class CheckoutSolution:
                 "H": {"price" : 10, "special_offers" : [{"units" : 5, "price" : 45}, {"units" : 10, "price" : 80}]},
                 "I": {"price" : 35},
                 "J": {"price" : 60},
-                "K": {"price" : 80,  "special_offers" : [{"units" : 2, "price" : 150}]}}
+                "K": {"price" : 80,  "special_offers" : [{"units" : 2, "price" : 150}]},
+                "L": {"price" : 90},
+                "M": {"price" : 15},
+                "N": {"price" : 40, "multi_offers" : {"units" : 3, "free_product" : "M", "free_quantity" : 1}},
+                "O": {"price" : 10},
+                "P": {"price" : 50, "special_offers" : [{"units" : 5, "price" : 200}]},
+                "Q": {"price" : 30, "special_offers" : [{"units" : 3, "price" 80}]}
+                }
         
         items_purchased = {}
         
@@ -84,6 +91,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
