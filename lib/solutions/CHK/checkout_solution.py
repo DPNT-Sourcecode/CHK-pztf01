@@ -15,7 +15,7 @@ class CheckoutSolution:
                 "H": {"price" : 10, "special_offers" : [{"units" : 10, "price" : 80}, {"units" : 5, "price" : 45}]},
                 "I": {"price" : 35},
                 "J": {"price" : 60},
-                "K": {"price" : 80,  "special_offers" : [{"units" : 2, "price" : 150}]},
+                "K": {"price" : 70,  "special_offers" : [{"units" : 2, "price" : 150}]},
                 "L": {"price" : 90},
                 "M": {"price" : 15},
                 "N": {"price" : 40, "multi_offer" : {"units" : 3, "free_product" : "M", "free_quantity" : 1}},
@@ -23,10 +23,6 @@ class CheckoutSolution:
                 "P": {"price" : 50, "special_offers" : [{"units" : 5, "price" : 200}]},
                 "Q": {"price" : 30, "special_offers" : [{"units" : 3, "price" : 80}]},
                 "R": {"price" : 50, "multi_offer" : {"units" : 3, "free_product" : "Q", "free_quantity" : 1}},
-                "S": {"price" : 30},
-                "S": {"price" : 30},
-                "N": {"price" : 40, "multi_offer" : {"units" : 3, "free_product" : "M", "free_quantity" : 1}},
-                "A": {"price" : 50, "special_offers" : [{"units" : 5, "price" : 200}, {"units" : 3, "price" : 130}]},
                 "S": {"price" : 20},
                 "T": {"price" : 20},
                 "U": {"price" : 40, "multi_offer" : {"units" : 3, "free_product" : "U", "free_quantity" : 1}},
@@ -131,6 +127,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
