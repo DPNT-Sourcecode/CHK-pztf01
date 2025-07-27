@@ -27,14 +27,14 @@ class CheckoutSolution:
                 "S": {"price" : 30},
                 "N": {"price" : 40, "multi_offer" : {"units" : 3, "free_product" : "M", "free_quantity" : 1}},
                 "A": {"price" : 50, "special_offers" : [{"units" : 5, "price" : 200}, {"units" : 3, "price" : 130}]},
-                "S": {"price" : 30},
+                "S": {"price" : 20},
                 "T": {"price" : 20},
                 "U": {"price" : 40, "multi_offer" : {"units" : 3, "free_product" : "U", "free_quantity" : 1}},
                 "V": {"price" : 50, "special_offers" : [{"units" : 3, "price" : 130}, {"units" : 2, "price" : 90}]},
                 "W": {"price" : 20},
-                "X": {"price" : 90},
-                "Y": {"price" : 10},
-                "Z": {"price" : 50},
+                "X": {"price" : 17},
+                "Y": {"price" : 20},
+                "Z": {"price" : 21},
                 }
         
         group_offers = {"group1" : {"group" : ["Z", "Y", "S", "T", "X"], "group_quantity" : 3, "group_price" : 45}}
@@ -113,6 +113,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
