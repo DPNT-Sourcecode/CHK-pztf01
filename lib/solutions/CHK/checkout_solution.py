@@ -47,32 +47,33 @@ class CheckoutSolution:
                 return -1
             if i in items_purchased:
                 items_purchased[i]["item_count"] = items_purchased[i]["item_count"] + 1
-                for j in group_offers:
-                    if i in group_offers[j]["group"]:
-                        items_purchased[i]["item_group"]=j
-                        if i in items_group:
-                            items_group[i] = items_group[i] + 1
             else:
                 items_purchased[i] = {"item_count": 1}
-                if i not in items_group:
-                    items_group[i] = 1
-        
- 
+
+            for j in group_offers:
+              if i in group_offers[j]["group"]:
+                items_purchased[i]["item_group"]=j
+              if j in items_group:
+                items_group[j] = items_group[j] + 1
+              else:
+                items_group[j] = 1
+      
         for i in items_group:
+            print(i)
             quantity_in_basket = items_group[i]
-            if i in group_offers:
-                group_quantity = group_offers[i]["group_quantity"]
-                group_price = group_offers[i]["group_price"]
-                basket_total = (group_price * quantity_in_basket)//group_quantity
-                remainder = quantity_in_basket%group_quantity
-                print(group_offers[i]["group"])
-                for j in group_offers[i]["group"]:
-                    if j in items_purchased and quantity_in_basket>0:
-                        item_count = items_purchased[j]["item_count"]
-                        if item_count > remainder:
-                            items_purchased[j]["item_count"] = 0
-                            del items_purchased[j]
-                            quantity_in_basket = quantity_in_basket - items_purchased[j]["item_count"]
+            print(quantity_in_basket)
+            group_quantity = group_offers[i]["group_quantity"]
+            print(group_quantity)
+            group_price = group_offers[i]["group_price"]
+            basket_total = (group_price * quantity_in_basket)//group_quantity
+            remainder = quantity_in_basket%group_quantity
+            for j in group_offers[i]["group"]:
+                if j in items_purchased and quantity_in_basket>0:
+                    item_count = items_purchased[j]["item_count"]
+                    if item_count > remainder:
+                        items_purchased[j]["item_count"] = 0
+                        del items_purchased[j]
+                        quantity_in_basket = quantity_in_basket - item_count
 
 
         for i in items_purchased:
