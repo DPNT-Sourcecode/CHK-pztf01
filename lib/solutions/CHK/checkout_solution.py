@@ -127,4 +127,3 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
-
