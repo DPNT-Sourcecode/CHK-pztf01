@@ -63,11 +63,11 @@ class CheckoutSolution:
             for j in group_offers[i]["group"]:
                 if j in items_purchased and quantity_in_basket>0:
                     item_count = items_purchased[j]["item_count"]
-                    if quantity_in_basket - item_count >= remainder:
+                    if quantity_in_basket - item_count > remainder:
                         items_purchased[j]["item_count"] = 0
                         quantity_in_basket = quantity_in_basket - item_count
                     else:
-                      if item_count >= remainder:
+                      if item_count > remainder:
                         items_purchased[j]["item_count"] = item_count - remainder
                         quantity_in_basket = quantity_in_basket - remainder
                     if (items_purchased[j]["item_count"] == 0):
@@ -131,3 +131,4 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
