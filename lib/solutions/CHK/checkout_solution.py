@@ -58,7 +58,14 @@ class CheckoutSolution:
                 items_purchased[i] = {"item_count": 1}
 
         for i in items_group:
-            
+            quantity_in_basket = items_group[i]
+            if i in group_offers:
+                group_quantity = group_offers[i]["group_quantity"]
+                group_price = group_offers[i]["group_price"]
+                basket_total = (group_price * quantity_in_basket)//group_quantity
+                for j in group_offers[i]["group"]:
+                    if j in items_purchased:
+
 
         for i in items_purchased:
             quantity = items_purchased[i]["item_count"]
@@ -118,6 +125,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
