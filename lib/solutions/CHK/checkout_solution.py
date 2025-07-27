@@ -62,7 +62,7 @@ class CheckoutSolution:
             quantity_in_basket = items_group[i]
             group_quantity = group_offers[i]["group_quantity"]
             group_price = group_offers[i]["group_price"]
-            basket_total = (group_price * quantity_in_basket)//group_quantity
+            basket_total = group_price * (quantity_in_basket//group_quantity)
             remainder = quantity_in_basket%group_quantity
             for j in group_offers[i]["group"]:
                 if j in items_purchased and quantity_in_basket>0:
@@ -131,6 +131,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
