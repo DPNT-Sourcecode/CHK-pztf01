@@ -57,6 +57,9 @@ class CheckoutSolution:
             else:
                 items_purchased[i] = {"item_count": 1}
 
+        for i in items_group:
+            
+
         for i in items_purchased:
             quantity = items_purchased[i]["item_count"]
             if i in price_table:
@@ -115,6 +118,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
