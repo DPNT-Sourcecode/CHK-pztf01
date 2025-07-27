@@ -4,7 +4,8 @@ class CheckoutSolution:
     # skus = unicode string
     def checkout(self, skus):
         basket_total = 0
-        price_table = {"A": {"price" : 50, "special_offers" : [{"units" : 5, "price" : 200}, {"units" : 3, "price" : 130}]},
+        price_table = {
+                "A": {"price" : 50, "special_offers" : [{"units" : 5, "price" : 200}, {"units" : 3, "price" : 130}]},
                 "B": {"price" : 30, "special_offers" : [{"units" : 2, "price" : 45}]},
                 "C": {"price" : 20},
                 "D": {"price" : 15},
@@ -20,7 +21,20 @@ class CheckoutSolution:
                 "N": {"price" : 40, "multi_offers" : {"units" : 3, "free_product" : "M", "free_quantity" : 1}},
                 "O": {"price" : 10},
                 "P": {"price" : 50, "special_offers" : [{"units" : 5, "price" : 200}]},
-                "Q": {"price" : 30, "special_offers" : [{"units" : 3, "price" 80}]}
+                "Q": {"price" : 30, "special_offers" : [{"units" : 3, "price" : 80}]},
+                "R": {"price" : 50, "multi_offer" : {"units" : 3, "free_product" : "Q", "free_quantity" : 1}},
+                "S": {"price" : 30},
+                "S": {"price" : 30},
+                "N": {"price" : 40, "multi_offers" : {"units" : 3, "free_product" : "M", "free_quantity" : 1}},
+                "A": {"price" : 50, "special_offers" : [{"units" : 5, "price" : 200}, {"units" : 3, "price" : 130}]},
+                "S": {"price" : 30},
+                "T": {"price" : 20},
+                "U": {"price" : 40, "multi_offers" : {"units" : 3, "free_product" : "U", "free_quantity" : 1}},
+                "V": {"price" : 50, "special_offers" : [{"units" : 2, "price" : 90}, {"units" : 3, "price" : 130}]},
+                "W": {"price" : 20},
+                "X": {"price" : 90},
+                "Y": {"price" : 10},
+                "Z": {"price" : 50},
                 }
         
         items_purchased = {}
@@ -91,6 +105,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
