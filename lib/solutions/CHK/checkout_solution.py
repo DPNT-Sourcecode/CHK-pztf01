@@ -37,6 +37,8 @@ class CheckoutSolution:
                 "Z": {"price" : 50},
                 }
         
+        group_offers = {"group1" : {"group" : ["Z", "Y", "S", "T", "X"], "group_quantity" : 3, "group_price" : 45}}
+        
         items_purchased = {}
         
         for i in skus:
@@ -46,6 +48,12 @@ class CheckoutSolution:
                 items_purchased[i] = items_purchased[i] + 1
             else:
                 items_purchased[i] = 1
+
+        for i in items_purchased:
+            for j in group_offers:
+                if i in j["group"]:
+                    group_quantity = j["group_quantity"]
+                    group_price = j["group_price"]
 
         for i in items_purchased:
             quantity = items_purchased[i]
@@ -105,6 +113,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
