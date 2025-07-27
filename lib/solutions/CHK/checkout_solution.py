@@ -37,7 +37,7 @@ class CheckoutSolution:
                 "Z": {"price" : 21},
                 }
         
-        group_offers = {"group1" : {"group" : ["Z", "Y", "S", "T", "X"], "group_quantity" : 3, "group_price" : 45}}
+        group_offers = {"G1" : {"group" : ["Z", "Y", "S", "T", "X"], "group_quantity" : 3, "group_price" : 45}}
         
         items_purchased = {}
         
@@ -46,6 +46,9 @@ class CheckoutSolution:
                 return -1
             if i in items_purchased:
                 items_purchased[i]["item_count"] = items_purchased[i]["item_count"] + 1
+                for j in group_offers:
+                    if i in group_offers[j]["group"]:
+                       items_purchased[i]["item_group"]="G1" 
             else:
                 items_purchased[i] = {"item_count": 1}
 
@@ -107,9 +110,6 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
-
-
-
 
 
 
