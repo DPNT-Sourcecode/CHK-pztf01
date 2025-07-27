@@ -47,7 +47,7 @@ class CheckoutSolution:
             if i in items_purchased:
                 items_purchased[i]["item_count"] = items_purchased[i]["item_count"] + 1
             else:
-                items_purchased[i]["item_count"] = 1
+                items_purchased[i] = {"item_count": 1}
 
         for i in items_purchased:
             for j in group_offers:
@@ -113,6 +113,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
