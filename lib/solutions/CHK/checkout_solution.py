@@ -59,11 +59,8 @@ class CheckoutSolution:
                 items_group[j] = 1
       
         for i in items_group:
-            print(i)
             quantity_in_basket = items_group[i]
-            print(quantity_in_basket)
             group_quantity = group_offers[i]["group_quantity"]
-            print(group_quantity)
             group_price = group_offers[i]["group_price"]
             basket_total = (group_price * quantity_in_basket)//group_quantity
             remainder = quantity_in_basket%group_quantity
@@ -134,6 +131,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
