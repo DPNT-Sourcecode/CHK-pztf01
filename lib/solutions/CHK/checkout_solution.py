@@ -45,9 +45,9 @@ class CheckoutSolution:
             if i not in price_table:
                 return -1
             if i in items_purchased:
-                items_purchased[i] = items_purchased[i] + 1
+                items_purchased[i]["item_count"] = items_purchased[i]["item_count"] + 1
             else:
-                items_purchased[i] = 1
+                items_purchased[i]["item_count"] = 1
 
         for i in items_purchased:
             for j in group_offers:
@@ -56,7 +56,7 @@ class CheckoutSolution:
                     group_price = j["group_price"]
 
         for i in items_purchased:
-            quantity = items_purchased[i]
+            quantity = items_purchased[i]["item_count"]
             if i in price_table:
                 if "multi_offer" in price_table[i]:
                     units = price_table[i]["multi_offer"]["units"]
@@ -67,16 +67,16 @@ class CheckoutSolution:
 
                     if free_product == i:
                         frees = ((free_quantity * quantity)//(units + free_quantity))
-                        items_purchased[i] = items_purchased[i] - frees
+                        items_purchased[i]["item_count"] = items_purchased[i]["item_count"] - frees
                     else:
                         if free_product in items_purchased:
-                            items_purchased[free_product] = items_purchased[free_product] - quotient
-                            if items_purchased[free_product] < 0:
-                                items_purchased[free_product] = 0
+                            items_purchased[free_product]["item_count"] = items_purchased[free_product]["item_count"] - quotient
+                            if items_purchased[free_product]["item_count"] < 0:
+                                items_purchased[free_product]["item_count"] = 0
 
         for i in items_purchased:
             # i = A
-            quantity = items_purchased[i] # 35
+            quantity = items_purchased[i]["item_count"] # 35
             if quantity ==0:
                 pass
 
@@ -113,6 +113,7 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
+
 
 
 
