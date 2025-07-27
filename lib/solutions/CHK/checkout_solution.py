@@ -50,20 +50,20 @@ class CheckoutSolution:
               if i in group_offers[j]["group"]:
                 items_purchased[i]["item_group"]=j
                 if j in items_group:
-                    items_group[j] = items_group[j] + 1
+                  items_group[j] = items_group[j] + 1
                 else:
-                    items_group[j] = 1
-      
+                  items_group[j] = 1
+
         for i in items_group:
             quantity_in_basket = items_group[i]
             group_quantity = group_offers[i]["group_quantity"]
             group_price = group_offers[i]["group_price"]
-            basket_total = group_price * (quantity_in_basket//group_quantity)
+            basket_total = (group_price) * (quantity_in_basket//group_quantity)
             remainder = quantity_in_basket%group_quantity
             for j in group_offers[i]["group"]:
                 if j in items_purchased and quantity_in_basket>0:
                     item_count = items_purchased[j]["item_count"]
-                    if item_count > remainder:
+                    if item_count< quantity_in_basket:
                         items_purchased[j]["item_count"] = 0
                         del items_purchased[j]
                         quantity_in_basket = quantity_in_basket - item_count
@@ -127,6 +127,3 @@ class CheckoutSolution:
             basket_total = basket_total + item_total_cost
                 
         return basket_total
-
-
-
