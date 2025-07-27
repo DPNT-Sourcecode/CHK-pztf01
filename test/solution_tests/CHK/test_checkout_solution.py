@@ -8,7 +8,7 @@ class TestChk():
         assert CheckoutSolution().checkout("AACD") == 135
 
     def test_checkout_3(self):
-        assert CheckoutSolution().checkout("G") == -1
+        assert CheckoutSolution().checkout("G") == 20
 
     def test_checkout_4(self):
         assert CheckoutSolution().checkout("DCBA") == 115
